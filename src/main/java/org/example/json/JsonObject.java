@@ -4,28 +4,23 @@ import java.util.ArrayList;
 
 public class JsonObject extends JsonDataType {
     private ArrayList<JsonDataType> dataList;
+    private String identifier;
 
     /**
      * If you want to send a completed ArrayList of the data here, use this constructor.
      * @param dataList  The ArrayList of data the JSON object will contain
      */
-    public JsonObject(ArrayList<JsonDataType> dataList){
+    public JsonObject(String identifier, ArrayList<JsonDataType> dataList){
         this.dataList = dataList;
+        this.identifier = identifier;
     }
 
     /**
      * If you want to instead initialize it empty and add them as you go, use this constructor.
      */
-    public JsonObject(){
+    public JsonObject(String identifier){
         dataList = new ArrayList<JsonDataType>();
-    }
-
-    /**
-     * Adds the data to the ArrayList of data the object contains.
-     * @param data  The data to be added to the ArrayList of data
-     */
-    public void addDataType(JsonDataType data){
-        dataList.add(data);
+        this.identifier = identifier;
     }
 
     /**
@@ -35,7 +30,7 @@ public class JsonObject extends JsonDataType {
     @Override
     public String toJSONString() {
         //It's basically just brackets with all its items inside. Yeah, just a container. Yep. Or is it...?
-        return "{" + JSONObjectStringBuilder() + "}";
+        return "} " + identifier;
     }
 
     /**
@@ -44,22 +39,7 @@ public class JsonObject extends JsonDataType {
      */
     @Override
     public String getIdentifier() {
-        return null;
-    }
-
-    /**
-     * Helper method for toJSONString. Not meant to be used anywhere else by anyone else.
-     * @return  The concatenated String of all the data types in their JSON String forms
-     */
-    private String JSONObjectStringBuilder(){
-        //Initialize the string we'll be building upon
-        String resultingString = "{";
-
-        //Now iterate through the ArrayList of data, concatenating everything into resultingString
-        for (JsonDataType jDS : dataList){
-            resultingString = resultingString + jDS.toJSONString();
-        }
-        return resultingString + "}";
+        return identifier;
     }
 
     public String getDataAsString(){

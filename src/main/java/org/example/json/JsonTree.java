@@ -19,24 +19,11 @@ public class JsonTree {
         jsonObjectNodes = new ArrayList<>();
     }
 
-    /*
-    TODO: Need to figure out how to add to the proper place all the time
-    Maybe keep track of the different Nodes that contain objects
-    and go from each to each depending on the brackets and parenthesis
-
-    like keep all the nodes with several children in an arraylist and jump between them
-    QUEUE, since it's first in last out ya know??? with brackets and shit
-
-    Actually we'll rework this idea a bit, this will keep track of the JSON Objects while tree builder
-    will send integers to see which JSON object to add to :) This is scuffed, sorry if anyone's reading this
-
-     */
-
     public void add(JsonDataType data, int jsonObjectPos){
         //The first element to be added will always be a JSON Object and the root
         //It also should NOT contain any data ofc, since it's an object
         if (size == 0){
-            root = new Node(null, new JsonObject());
+            root = new Node(null, data);
             jsonObjectNodes.add(root);
             size++;
         }
@@ -71,6 +58,7 @@ public class JsonTree {
     private void DFS(Node currentNode, String identifier){
         //If there's children we gotta dig deeper into them. That was a poorly worded statement
         if (currentNode.hasChildren()){
+            System.out.println("{");
             for (Node child : currentNode.getChildrenArrayList()){
                 DFS(child, identifier);
             }
@@ -81,6 +69,7 @@ public class JsonTree {
                 searchResult = currentNode.data;
             }
         }
+        //TODO: Remove test print lines here
         System.out.println(currentNode.data.toJSONString());
     }
 
