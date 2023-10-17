@@ -3,23 +3,12 @@ package org.example.json;
 import java.util.ArrayList;
 
 public class JsonObject extends JsonDataType {
-    private ArrayList<JsonDataType> dataList;
     private String identifier;
 
     /**
      * If you want to send a completed ArrayList of the data here, use this constructor.
-     * @param dataList  The ArrayList of data the JSON object will contain
-     */
-    public JsonObject(String identifier, ArrayList<JsonDataType> dataList){
-        this.dataList = dataList;
-        this.identifier = identifier;
-    }
-
-    /**
-     * If you want to instead initialize it empty and add them as you go, use this constructor.
      */
     public JsonObject(String identifier){
-        dataList = new ArrayList<JsonDataType>();
         this.identifier = identifier;
     }
 
