@@ -1,7 +1,5 @@
 package org.example.json;
 
-import java.util.ArrayList;
-
 public class JsonObject extends JsonDataType {
     private String identifier;
 
@@ -18,7 +16,7 @@ public class JsonObject extends JsonDataType {
      */
     @Override
     public String toJSONString() {
-        //It's basically just brackets with all its items inside. Yeah, just a container. Yep. Or is it...?
+        //TODO: Fnd proper way to print this object as text for a JSON file
         return "} " + identifier;
     }
 

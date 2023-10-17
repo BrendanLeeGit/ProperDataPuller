@@ -1,8 +1,8 @@
 package org.example.json;
 
 public class JsonString extends JsonDataType {
-    String identifier;
-    String data;
+    private String identifier;
+    private String data;
 
     public JsonString(String identifier, String data){
         this.identifier = identifier;

@@ -80,9 +80,9 @@ public class JsonTree {
      * Custom Node class specifically made to work with these data types and the tree.
      */
     public class Node {
-        public Node parent;
-        public ArrayList<Node> children;
-        public JsonDataType data;
+        private Node parent;
+        private ArrayList<Node> children;
+        private JsonDataType data;
 
         public Node (Node previous, JsonDataType data){
             this.parent = previous;
