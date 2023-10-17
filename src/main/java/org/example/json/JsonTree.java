@@ -21,7 +21,6 @@ public class JsonTree {
 
     public void add(JsonDataType data, int jsonObjectPos){
         //The first element to be added will always be a JSON Object and the root
-        //It also should NOT contain any data ofc, since it's an object
         if (size == 0){
             root = new Node(null, data);
             jsonObjectNodes.add(root);
@@ -46,11 +45,6 @@ public class JsonTree {
      * @return  The first occurrence of a data type with the inputted identifier
      */
     private JsonDataType search(String identifier){
-        /*
-        Need to implement a depth first search of this stuff. Oh my god not paying attention to Cicirello's class is
-        coming back to bite me in the butt
-         */
-
         DFS(root, identifier);
         return searchResult;
     }
