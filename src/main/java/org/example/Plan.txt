@@ -1,0 +1,36 @@
+Ability to translate different file formats like XML and JSON into a universal data type
+
+make sure this universal datatype is traverseable and changeable in different ways
+
+JSON Reading:
+We're gonna take everything as strings, and these strings can be sent to a factory to become actual objects
+
+Actualy I lied, we'll make several objects
+    -Each datatype will extend abstract JSONDatatype
+        -This ensures I can hold several in one array together
+    -Each datatype will have:
+        -A String as an identifier
+        -The associated data, whether it's an array or smt else
+
+    -How to store several things in a JSON object such as an unlimited amount of strings, integers, and booleans?
+        -Datatypes include:
+            -a string
+            -a number
+            -an object (JSON object)
+            -an array
+            -a boolean
+            -null
+        -Objects have an arraylist of the datatype :)
+
+    -Need to make the object navigable
+        -Use casting depending on the instance? Kinda questionable ngl but we'll see I suppose
+        -You only ever need to dive into arrays and objects
+            -Make a way to delve deeper into objects
+            -Give array search methods
+
+        -How to tell the difference between an oject and a stirng and stuff if we're hlding them as JSONObjects??
+            - Utilize instance of like
+                    JsonDataType test = new JsonString("Hi","Bye");
+                    System.out.println(test instanceof JsonString);
+
+                    every object will be it's own tree? idk

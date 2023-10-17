@@ -1,0 +1,30 @@
+package org.example.json;
+
+public class ProofOfConcept {
+
+    public static void main(String[] args){
+        //Make a tree
+        JsonTree jsonTree = new JsonTree();
+
+        //Adds some values to the first
+        jsonTree.add(new JsonObject(), 2425); //TODO: Find a way less ugly way to add first node
+        jsonTree.add(new JsonNumber("Age", 28), 0);
+        jsonTree.add(new JsonString("Name", "Brendan"), 0);
+        jsonTree.add(new JsonObject(), 0);
+        jsonTree.add(new JsonNumber("Money", -4), 0); //To represent my irl wallet
+
+        //Add some values to the object within an object
+        jsonTree.add(new JsonObject(), 1);
+        jsonTree.add(new JsonString("Car", "Honda"), 1);
+
+        //Add some values to the object within an object within an object
+        jsonTree.add(new JsonString("Shirt", "T-Shirt"), 2);
+        jsonTree.add(new JsonString("Pants", "Jeans"), 2);
+
+        //Search for pants I suppose
+        System.out.println(jsonTree.searchForData("Pants"));
+
+    }
+
+
+}
