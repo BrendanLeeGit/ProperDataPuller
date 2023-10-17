@@ -1,8 +1,11 @@
 package org.example.json;
 
+/**
+ * Testing everything to make sure it'll work properly. Not actual unit tests.
+ */
 public class ProofOfConcept {
 
-    public static void main(String[] args){
+    public void run(){
         //Make a tree
         JsonTree jsonTree = new JsonTree();
 

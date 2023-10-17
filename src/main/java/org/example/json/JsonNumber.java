@@ -1,5 +1,8 @@
 package org.example.json;
 
+/**
+ * Represents a Number from a JSON File. Only does floats. I don't have anything for integers.
+ */
 public class JsonNumber extends JsonDataType {
     private String identifier;
     float data;

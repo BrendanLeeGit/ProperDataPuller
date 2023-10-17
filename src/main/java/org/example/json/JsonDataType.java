@@ -1,7 +1,7 @@
 package org.example.json;
 
 /**
- * Superclass for the datatypes. This is mainly used so that I can hold multiple of them in a single JSON object. It
+ * Superclass for the data types. This is mainly used so that I can hold multiple of them in a single JSON object. It
  * also has the added bonus of allowing me to give it abstract methods they'll all share. Tbh could also be an
  * interface,but I already did this so... fk it we ball.
  */

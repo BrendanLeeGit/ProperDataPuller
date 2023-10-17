@@ -75,7 +75,6 @@ public class JsonTree {
         return (search(identifier).getDataAsString());
     }
 
-
     /**
      * Custom Node class specifically made to work with these data types and the tree.
      */

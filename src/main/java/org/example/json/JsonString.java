@@ -1,5 +1,8 @@
 package org.example.json;
 
+/**
+ * Used to represent a String from a JSON File.
+ */
 public class JsonString extends JsonDataType {
     private String identifier;
     private String data;

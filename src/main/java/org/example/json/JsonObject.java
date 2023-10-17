@@ -1,5 +1,8 @@
 package org.example.json;
 
+/**
+ * Represents a JSON Object.
+ */
 public class JsonObject extends JsonDataType {
     private String identifier;
 
