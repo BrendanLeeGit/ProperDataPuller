@@ -14,11 +14,21 @@ public class JsonTree {
     //Okay I know this is super ugly but I don't know how to do recursion properly. I'll push that back for later :D
     private JsonDataType searchResult;
 
+    /**
+     * Constructs a JsonTree with an initial size of 0.
+     */
     public JsonTree(){
         size = 0;
         jsonObjectNodes = new ArrayList<>();
     }
 
+    /**
+     * Adds a JSON data type to the tree. The jsonObjectPos variable is how you choose WHERE to add the Node. The
+     * program keeps a list of Nodes that record JSON Object nodes, so you indicate which Object the data type will go
+     * into by inputting its index. Ex, the initial object should have a jsonObjectPos should be 0.
+     * @param data          The JsonDataType object that you wish to add to the tree
+     * @param jsonObjectPos Which Node this newly created Node will be added to as a child Node
+     */
     public void add(JsonDataType data, int jsonObjectPos){
         //The first element to be added will always be a JSON Object and the root
         if (size == 0){

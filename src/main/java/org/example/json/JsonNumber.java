@@ -5,7 +5,7 @@ package org.example.json;
  */
 public class JsonNumber extends JsonDataType {
     private String identifier;
-    float data;
+    private float data;
 
     public JsonNumber(String identifier, float data){
         this.identifier = identifier;
