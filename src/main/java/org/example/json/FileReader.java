@@ -4,8 +4,7 @@ import java.io.IOException;
 import java.nio.file.Path;
 
 /**
- * Just used to take data from a JSON File and clean it up. I'm putting this here because it's ugly and I don't
- * want to see it.
+ * Used to read a JSON File and clean it up (I.e. removing whitespace) for easier processing.
  */
 public class FileReader {
     public static String getStringOfFile(String filePath) {

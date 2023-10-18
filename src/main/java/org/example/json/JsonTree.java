@@ -3,7 +3,7 @@ package org.example.json;
 import java.util.ArrayList;
 
 /**
- * Tree to represent a JSON Object :D. Only need to be able to add to it.
+ * Tree to represent a JSON Object.
  */
 public class JsonTree {
 
@@ -11,7 +11,7 @@ public class JsonTree {
     private int size;
     private ArrayList<Node> jsonObjectNodes;
 
-    //Okay I know this is super ugly but I don't know how to do recursion properly. I'll push that back for later :D
+    //Band-aid solution for recursive search. TODO: Rework this method of searching
     private JsonDataType searchResult;
 
     /**
@@ -49,8 +49,7 @@ public class JsonTree {
     }
 
     /**
-     * Returns the LAST data type with the inputted identifier. Only one! The LAST one! Okay? Good. ONLY THE LAST!
-     * Recall that JsonObjects don't seem to have identifiers so... yeah.
+     * Returns the LAST data type with the inputted identifier.
      * @param identifier    The identifier of the wanted data type
      * @return  The first occurrence of a data type with the inputted identifier
      */

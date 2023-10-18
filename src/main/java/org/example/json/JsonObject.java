@@ -7,7 +7,7 @@ public class JsonObject extends JsonDataType {
     private String identifier;
 
     /**
-     * If you want to send a completed ArrayList of the data here, use this constructor.
+     * Constructs a JsonObject with the inputted identifier.
      */
     public JsonObject(String identifier){
         this.identifier = identifier;
@@ -24,14 +24,19 @@ public class JsonObject extends JsonDataType {
     }
 
     /**
-     * Returns the identifier of the object. In this case, we actually return null since there is no identifier.
-     * @return
+     * Returns the data type's identifier as a String.
+     * @return  The data type's identifier as a String
      */
     @Override
     public String getIdentifier() {
         return identifier;
     }
 
+    /**
+     * Specifically returns the data of the object, not the identifier, as a normal, basic String.
+     * @return  the data of the object as a String
+     */
+    @Override
     public String getDataAsString(){
         return "I haven't decided what this will return yet";
         //TODO: Figure out above lol
