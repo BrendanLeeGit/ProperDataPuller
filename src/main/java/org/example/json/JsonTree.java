@@ -59,7 +59,7 @@ public class JsonTree {
     }
 
     private void DFS(Node currentNode, String identifier){
-        //If there's children we gotta dig deeper into them. That was a poorly worded statement
+        //If a Node has child nodes, need to parse through them first
         if (currentNode.hasChildren()){
             System.out.println("{");
             for (Node child : currentNode.getChildrenArrayList()){

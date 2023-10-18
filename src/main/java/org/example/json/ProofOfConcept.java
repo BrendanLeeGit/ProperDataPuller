@@ -24,7 +24,7 @@ public class ProofOfConcept {
         jsonTree.add(new JsonString("Shirt", "T-Shirt"), 2);
         jsonTree.add(new JsonString("Pants", "Jeans"), 2);
 
-        //Search for pants I suppose
+        //Search for pants
         System.out.println(jsonTree.searchForData("Pants"));
     }
 }
