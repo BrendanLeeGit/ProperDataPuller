@@ -20,7 +20,7 @@ public class JsonObject extends JsonDataType {
     @Override
     public String toJSONString() {
         //TODO: Fnd proper way to print this object as text for a JSON file
-        return "} " + identifier;
+        return "{}";
     }
 
     /**

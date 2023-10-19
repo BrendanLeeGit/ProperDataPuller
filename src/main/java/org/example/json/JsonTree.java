@@ -10,6 +10,7 @@ public class JsonTree {
     private Node root;
     private int size;
     private ArrayList<Node> jsonObjectNodes;
+    private String stringRepresentation;
 
     //Band-aid solution for recursive search. TODO: Rework this method of searching
     private JsonDataType searchResult;
@@ -74,6 +75,39 @@ public class JsonTree {
         }
         //TODO: Remove test print lines here
         System.out.println(currentNode.data.toJSONString());
+    }
+
+    public String buildStringRepresentation(){
+        stringRepresentation = "";
+        DFSBuildString(root);
+        return stringRepresentation;
+    }
+
+    private void DFSBuildString(Node currentNode){
+        //Setting up the strings for the brackets
+        String beg = "{";
+        String end = "}";
+
+        //If a Node has child nodes, need to parse through them first
+        //It's either a JsonObject or a JsonArray, and we need to find out which since arrays require more
+        if (currentNode.data instanceof JsonArray){
+            beg = "[";
+            end = "]";
+        }
+        if (currentNode.hasChildren()){
+            stringRepresentation += currentNode.data.getIdentifier() + beg;
+            for (Node child : currentNode.getChildrenArrayList()){
+                DFSBuildString(child);
+                stringRepresentation += ",";
+            }
+            //Remove the last comma of the string
+            stringRepresentation = stringRepresentation.substring(0, stringRepresentation.length() - 1);
+            stringRepresentation += end;
+        }
+        //Otherwise, add the data to the string
+        else {
+            stringRepresentation += currentNode.data.toJSONString();
+        }
     }
 
     /**
