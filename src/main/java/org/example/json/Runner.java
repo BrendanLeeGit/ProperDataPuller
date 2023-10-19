@@ -6,6 +6,7 @@ package org.example.json;
 public class Runner {
     public static void main(String[] args){
         ProofOfConcept proofOfConcept = new ProofOfConcept();
+        proofOfConcept.creatFileTest();
         proofOfConcept.run();
     }
 }

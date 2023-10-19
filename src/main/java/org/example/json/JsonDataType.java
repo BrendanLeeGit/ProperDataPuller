@@ -13,6 +13,12 @@ public abstract class JsonDataType {
     public abstract String toJSONString();
 
     /**
+     * Returns the data type's String representation for a JSON file when the string is a value of an array.
+     * @return The data type's String representation for a JSON file
+     */
+    public abstract String toJsonStringArrayValue();
+
+    /**
      * Returns the data type's identifier as a String.
      * @return  The data type's identifier as a String
      */

@@ -25,9 +25,10 @@ public class ProofOfConcept {
         jsonTree.add(new JsonString("Pants", "Jeans"), 2);
 
         //Array test
-        jsonTree.add(new JsonArray("\"Posessions\": "), 2);
+        jsonTree.add(new JsonArray("\"OtherStuff\": "), 2);
+        jsonTree.add(new JsonString("Pocket", "Wallet"), 3);
 
-        //Print Tree
+        //Print the created JSON File
         System.out.println(jsonTree.buildStringRepresentation());
 
         //Search for pants
@@ -36,5 +37,23 @@ public class ProofOfConcept {
         //Testing reading a file
         System.out.println(FileReader.getStringOfFile("C:\\Users\\BLee\\Documents\\FilePullerDoc\\" +
                 "test.json"));
+    }
+
+    public void creatFileTest(){
+        //Make a tree
+        JsonTree jsonTree = new JsonTree();
+
+        //Make initial object
+        jsonTree.add(new JsonObject(""), 0);
+        jsonTree.add(new JsonString("OrderId", "01234"), 0);
+        jsonTree.add(new JsonString("OrderDate", "January"), 0);
+        jsonTree.add(new JsonString("Stuff", "Stuff2"), 0);
+        jsonTree.add(new JsonArray("\"Information\": "), 0);
+        jsonTree.add(new JsonObject(""), 1);
+        jsonTree.add(new JsonString("Name", "Brendan"), 2);
+        jsonTree.add(new JsonString("Social Security Number", "15"), 2);
+
+        //Print the created JSON File
+        System.out.println(jsonTree.buildStringRepresentation());
     }
 }

@@ -106,7 +106,14 @@ public class JsonTree {
         }
         //Otherwise, add the data to the string
         else {
-            stringRepresentation += currentNode.data.toJSONString();
+            //If the parent node is an array, then we need to exclude any identifier
+            if (currentNode.parent.data instanceof JsonArray){
+                stringRepresentation += currentNode.data.toJsonStringArrayValue();
+            }
+            else{
+                stringRepresentation += currentNode.data.toJSONString();
+            }
+
         }
     }
 

@@ -31,8 +31,15 @@ public class JsonString extends JsonDataType {
      */
     @Override
     public String toJSONString() {
-        //{"name":"John"}
         return "\"" + identifier + "\":\"" + data + "\"";
+    }
+
+    /**
+     * Returns the data type's String representation for a JSON file when the string is a value of an array.
+     * @return The data type's String representation for a JSON file
+     */
+    public String toJsonStringArrayValue(){
+        return "\"" + data + "\"";
     }
 
     /**

@@ -24,6 +24,14 @@ public class JsonObject extends JsonDataType {
     }
 
     /**
+     * Returns the data type's String representation for a JSON file when the string is a value of an array.
+     * @return The data type's String representation for a JSON file
+     */
+    public String toJsonStringArrayValue(){
+        return "{}";
+    }
+
+    /**
      * Returns the data type's identifier as a String.
      * @return  The data type's identifier as a String
      */
